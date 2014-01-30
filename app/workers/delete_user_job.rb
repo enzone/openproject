@@ -28,8 +28,11 @@
 #++
 
 class DeleteUserJob
+  include Apartment::Delayed::Job::Hooks
+
   def initialize(user)
     @user_id = user.id
+    @database = Apartment::Database.current_database
   end
 
   def perform
