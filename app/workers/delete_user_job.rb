@@ -42,6 +42,6 @@ class DeleteUserJob
   private
 
   def user
-    @user ||= User.find @user_id
+    @user ||= User.find(@user_id)
   end
 end
