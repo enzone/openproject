@@ -27,8 +27,10 @@
 # See doc/COPYRIGHT.rdoc for more details.
 #++
 
+require 'subscribem/delayed_job/hooks'
+
 class DeleteUserJob
-  include Apartment::Delayed::Job::Hooks
+  include Subscribem::Delayed::Job::Hooks
 
   def initialize(user)
     @user_id = user.id
