@@ -29,7 +29,7 @@
 require 'spec_helper'
 
 describe BoardsController, type: :controller do
-  let(:user) { FactoryGirl.build(:user) }
+  let(:user) { FactoryGirl.create(:user) }
   let(:project) { FactoryGirl.build(:project) }
   let!(:board) {
     FactoryGirl.build(:board,
@@ -38,6 +38,8 @@ describe BoardsController, type: :controller do
 
   before do
     disable_flash_sweep
+
+    allow(User).to receive(:current).and_return user
   end
 
   describe :create do
