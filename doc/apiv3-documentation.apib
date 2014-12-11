@@ -1664,6 +1664,11 @@ but are also limited to the projects that the current user is allowed to see.
 
 # Group Users
 
+## Linked Properties:
+|  Link               | Description                              | Type          | Nullable | Supported operations |
+|:-------------------:|----------------------------------------- | ------------- | -------- | -------------------- |
+| self                | This user                                | User          |          | READ                 |
+
 ## Properties:
 | Property    | Description                                               | Type     | Constraints | Supported operations |
 | :---------: | -------------                                             | ----     | ----------- | -------------------- |
@@ -1672,7 +1677,7 @@ but are also limited to the projects that the current user is allowed to see.
 | firstName   | User's first name                                         | String   |             | READ                 |
 | lastName    | User's last name                                          | String   |             | READ                 |
 | name        | User's full name, formatting depends on instance settings | String   |             | READ                 |
-| mail        | User's email                                              | String   |             | READ                 |
+| email       | User's email                                              | String   |             | READ                 |
 | avatar      | URL to user's avatar                                      | String   |             | READ                 |
 | createdAt   | Time of creation                                          | DateTime |             | READ                 |
 | updatedAt   | Time of the most recent change to the user                | DateTime |             | READ                 |
@@ -1695,7 +1700,8 @@ but are also limited to the projects that the current user is allowed to see.
                 "login": "j.sheppard",
                 "firstName": "John",
                 "lastName": "Sheppard",
-                "mail": "shep@mail.com",
+                "email": "shep@mail.com",
+                "name": "John Sheppard",
                 "avatar": "https://gravatar/avatar",
                 "createdAt": "2014-05-21T08:51:20Z",
                 "updatedAt": "2014-05-21T08:51:20Z"
